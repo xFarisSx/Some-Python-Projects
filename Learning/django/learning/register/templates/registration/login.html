@@ -1,0 +1,87 @@
+{% extends "main/base.html" %}
+
+<html>
+{% load static %}
+
+<head>
+	{% block title %}Login{% endblock %}
+	{% block style %}
+	<style type="text/css">
+		ul {
+			text-align: center;
+			width: 100%;
+		}
+		form {
+			width: 90%;
+			max-width: 700px;
+		}
+
+		.helptext {
+			color: rgb(131, 17, 38);
+			font-weight: 400;
+			margin-top: -20px;
+
+		}
+
+		ul label {
+			color: rgb(143, 19, 42);
+			margin-top: 15px;
+			font-weight: 600;
+			color: white;
+
+		}
+
+		ul label::first-letter {
+			color: rgb(143, 19, 42);
+			font-size: 1.5rem;
+			color: white;
+		}
+
+		ul {
+			background-color: rgb(150, 20, 44);
+		}
+
+		ul li {
+			padding: 3px 15px;
+		}
+
+		ul li a:hover,
+		ul li:hover {
+			color: white;
+			text-decoration: none;
+			letter-spacing: 2px;
+			font-size: large;
+		}
+
+		.a {
+			text-decoration: none;
+			color: rgb(143, 19, 42);
+			transition: all 0.2s;
+		}
+		.a:hover {
+			text-decoration: underline;
+			color: white;
+		}
+
+	</style>
+	{% endblock %}
+
+
+</head>
+
+<body>
+	{% block content %}
+		<form method="POST" class="form-group">
+			<ul>
+				<div class="buttons">
+					{% csrf_token %}
+					{{ form }}
+					<button type="submit" class="btnaa">Login</button>
+					<p>Don't have an account? Create one <a class="a"  href="/register">here</a></p>
+				</div>
+			</ul>
+		</form>
+	{% endblock %}
+</body>
+
+</html>

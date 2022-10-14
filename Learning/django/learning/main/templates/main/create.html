@@ -1,0 +1,58 @@
+{% extends "main/base.html" %}
+{% load static %}
+<head>
+    {% block title %}Create New List{% endblock %}
+    {% block style %}
+        <style>
+            #content{
+                text-align: center;
+                justify-content: center;
+            }
+            form {
+                width: 60%;
+                max-width: 600px;
+                min-width: 350px;
+                height: 350px;
+                
+		    }
+            ul {
+                height: 100%;
+                display: flex;
+            }
+            .buttons {
+                width: 100%;
+                color: white;
+            }
+            label {
+                font-size: 1.3rem;
+            }
+            h2 {
+                position: relative;
+                top: -20px;
+                border-bottom: 1px solid rgb(150, 20, 44);
+                padding-bottom: 20px;
+
+            }
+            
+
+        </style>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+    <form method="post" action="/create/">
+        {% csrf_token %} 
+        <ul>
+            <div class="buttons">
+                <h2>Create Todo List</h2>
+
+                        {{form}}
+                        <button class="btnc" type="submit" name="save">Create New</button>
+
+            </div>
+
+        </ul>
+    </form>
+
+    {% endblock %}
+</body>
