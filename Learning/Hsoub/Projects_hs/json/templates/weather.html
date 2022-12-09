@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <title>Weather</title>
+</head>
+<body>
+    <div class="every">
+        <h1>Weather</h1>
+        <form>
+            <input type="text" placeholder="City Name">
+            <button type="submit">Search</button>
+            
+            <div class="weather hidden">
+                <h2>{city name}</h2>
+                <div class="details">
+                    <div class="temp detail">
+                        <p>The temp: <span>{temp}</span></p>
+                    </div>
+                    <div class="pressure detail">
+                        <p>The pressure: <span>{pressure}</span></p>
+                    </div>
+                    <div class="humidity detail">
+                        <p>The humidity: <span>{humidity}</span></p>
+                    </div>
+                    <div class="weather-desc detail">
+                        <p>The weather Description: <span>{weatherDesc}</span></p>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <template class="weatherT">
+        <h2>{city name}</h2>
+        <div class="details">
+            <div class="temp detail">
+                <p>The temp: <span>{temp}</span></p>
+            </div>
+            <div class="pressure detail">
+                <p>The pressure: <span>{pressure}</span></p>
+            </div>
+            <div class="humidity detail">
+                <p>The humidity: <span>{humidity}</span></p>
+            </div>
+            <div class="weather-desc detail">
+                <p>The weather Description: <span>{weatherDesc}</span></p>
+            </div>
+        </div>
+    </template>
+<script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+</body>
+</html>
